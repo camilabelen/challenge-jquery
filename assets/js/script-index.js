@@ -5,6 +5,10 @@ $(document).ready( function(){
 
 });
 
+//Función para agregar texto nuevas recetas
+$('#newRecipes').html(function printNews(){
+	$("#newRecipes").html('NUEVAS RECETAS');
+});
 
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
