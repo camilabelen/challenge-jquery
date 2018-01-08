@@ -8,6 +8,9 @@ $(document).ready(function() {
 
   //Función para agregar o eliminar clase para botones Make it o Recipe
   change();
+
+  //Función para redireccionar a index.html
+  back();
 });
 
 function change() {
@@ -22,3 +25,7 @@ function change() {
     $('.js-show-recipe').removeClass('active');
   });  
 };
+
+$('.js-back').click(function back() {
+  $(this).attr('href', 'index.html');
+});
