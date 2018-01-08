@@ -3,6 +3,7 @@ $(document).ready( function () {
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	printNews();
+	renderActivities(activitiesArray);
 });
 
 //Función para agregar texto nuevas recetas
@@ -17,13 +18,14 @@ function printNews () {
 
 var recipe = [];
 function renderHighlightedRecipes (recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	
 	for(var i = 0; i < recipesArray.length; i++){
 		if(recipesArray[i].highlighted === true){
 			recipe.push(recipesArray[i]);			
 		}
 	}
 	renderRecipe(recipe);
+	console.log('Recipes: ', recipesArray);
 }
 
 /*
@@ -34,21 +36,27 @@ function renderHighlightedRecipes (recipesArray) {
 */
 
 function renderRecipe (recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
 	for(var i = 0; i < recipe.length; i++){
 		$('.list-recipes').append('<a class="item-recipe" href="#"><span class="attribution">'
      + '<span class="title-recipe">' + recipe[i].title + '</span>' + '<span class="metadata-recipe">'
      + '<span class="author-recipe">' + recipe[i].source.name + '</span>' + '<span class="bookmarks-recipe">'
      + '<span class="icon-bookmark">' + '</span>' + '</span>' + '</span>' + '</span>' 
      + '<img src="assets/img/recipes/320x350/' + recipe[i].name + '.jpg"</a>' );
-   console.log('Voy a pintar la receta: ', recipe[i]);
-	}
+ 	}
+ 	console.log('Voy a pintar la receta: ', recipe[i]);
 }
 
 /*
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities (activitiesArray) {
+	
+	for(var i = 0; i < activitiesArray.length; i++){
+		renderActivity (activitiesArray[i]);
+		if(activitiesArray.length > 0){
+			$('.wrapper-message').hide();
+		}
+	}
 	console.log('Activities: ', activitiesArray);
 }
 
