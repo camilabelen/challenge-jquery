@@ -65,8 +65,13 @@ function renderActivities (activitiesArray) {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-activity.html"
 */
-function renderActivity (recipe) {
-	
+function renderActivity (activitiesList) {
+	$(".list-activities").append(`<a href="#" class="item-activity"><span class="attribution"><span class="avatar">
+    <img src="`+ activitiesList.userAvatar + `" class="image-avatar"></span><span class="meta">
+    <span class="author">`+ activitiesList.userName + `</span> made <span class="recipe">`+ activitiesList.recipeName +
+    `</span>: `+ activitiesList.text + `<span class="location">&mdash;`+ activitiesList.place + `</span>
+    </span></span> <div class="bg-image" style="background-image: url('assets/`+ activitiesList.image +
+    `'"></div></a>`);
 }
 
 
