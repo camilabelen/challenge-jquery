@@ -19,8 +19,8 @@ function printNews () {
 var recipe = [];
 function renderHighlightedRecipes (recipesArray) {
 	
-	for(var i = 0; i < recipesArray.length; i++){
-		if(recipesArray[i].highlighted === true){
+	for (var i = 0; i < recipesArray.length; i++) {
+		if (recipesArray[i].highlighted === true) {
 			recipe.push(recipesArray[i]);			
 		}
 	}
@@ -35,7 +35,7 @@ function renderHighlightedRecipes (recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe (recipe) {
-	for(var i = 0; i < recipe.length; i++){
+	for (var i = 0; i < recipe.length; i++){
 		$('.list-recipes').append('<a class="item-recipe" href="#"><span class="attribution">'
      + '<span class="title-recipe">' + recipe[i].title + '</span>' + '<span class="metadata-recipe">'
      + '<span class="author-recipe">' + recipe[i].source.name + '</span>' + '<span class="bookmarks-recipe">'
@@ -48,11 +48,10 @@ function renderRecipe (recipe) {
 /*
 * Función que se encarga de pintar todas las actividades
 */
-function renderActivities (activitiesArray) {
-	
-	for(var i = 0; i < activitiesArray.length; i++){
+function renderActivities (activitiesArray) {	
+	for (var i = 0; i < activitiesArray.length; i++) {
 		renderActivity (activitiesArray[i]);
-		if(activitiesArray.length > 0){
+		if (activitiesArray.length > 0) {
 			$('.wrapper-message').hide();
 		}
 	}
@@ -65,7 +64,7 @@ function renderActivities (activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity (activitiesList) {
-	$(".list-activities").append(`<a href="#" class="item-activity"><span class="attribution"><span class="avatar">
+	$('.list-activities').append(`<a href="#" class="item-activity"><span class="attribution"><span class="avatar">
     <img src="`+ activitiesList.userAvatar + `" class="image-avatar"></span><span class="meta">
     <span class="author">`+ activitiesList.userName + `</span> made <span class="recipe">`+ activitiesList.recipeName +
     `</span>: `+ activitiesList.text + `<span class="location">&mdash;`+ activitiesList.place + `</span>
