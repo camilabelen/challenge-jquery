@@ -1,4 +1,4 @@
-$(document).ready( function () {
+$(document).ready(() => {
 	$('.js-back').hide();
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
@@ -34,7 +34,6 @@ function renderHighlightedRecipes (recipesArray) {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-recipe.html"
 */
-
 function renderRecipe (recipe) {
 	for(var i = 0; i < recipe.length; i++){
 		$('.list-recipes').append('<a class="item-recipe" href="#"><span class="attribution">'
