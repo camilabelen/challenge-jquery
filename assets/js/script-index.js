@@ -2,20 +2,29 @@ $(document).ready( function(){
 	$('.js-back').hide();
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
+	printNews();
 
 });
 
 //Función para agregar texto nuevas recetas
-$('#newRecipes').html(function printNews(){
+function printNews(){
 	$("#newRecipes").html('NUEVAS RECETAS');
-});
+};
 
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
+
+var recipe = [];
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	for(var i = 0; i < recipesArray.length; i++){
+		if(recipesArray[i].highlighted === true){
+			recipe.push(recipesArray[i]);			
+		}
+	}
+	renderRecipe(recipe);
 }
 
 /*
